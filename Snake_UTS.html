@@ -12,15 +12,20 @@
   canvas {
     background: url("back/snake.png");
     border: 5px solid black;
+    width: 100%;
+  	height: 400px;
   }
   </style>
 </head>
 <body>
- <audio src="assets/Lauv & Troye Sivan - i'm so tired... [Official Audio].mp3" autoplay="autoplay"></audio>
+ <audio src="assets/Honne_location_unknown.mp3" autoplay="autoplay"></audio>
 <canvas width="728" height="375" id="game"></canvas>
 <script>
-var canvas = document.getElementById('game');
-var context = canvas.getContext('2d');
+  var canvas = document.getElementById('game');
+  var context = canvas.getContext('2d');
+  canvas.width= canvas.scrollWidth;
+	canvas.height= canvas.scrollHeight;
+  
 var grid = 16;
 var count = 0;
   
@@ -92,7 +97,7 @@ function loop() {
     // ular makan apel
     if (cell.x === apple.x && cell.y === apple.y) {
       snake.maxCells++;
-      // canvas 728x375
+      // canvas 100%x400
       apple.x = getRandomInt(0, 25) * grid;
       apple.y = getRandomInt(0, 25) * grid;
     }
